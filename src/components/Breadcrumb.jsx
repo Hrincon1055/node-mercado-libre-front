@@ -6,11 +6,16 @@ export default function Breadcrumb() {
   const { categories } = useContext(ProductContext);
   // state
   const [stringBreascrumb, setStringBreascrumb] = useState("");
+  // console.log(categories);
 
   // effect
   useEffect(() => {
     if (categories.length > 0) {
-      let stringTemp = categories.slice(0, 3).join(" > ");
+      let stringTemp = categories
+        .slice(0, 1)
+        .map((item) => item.name)
+        .join(" > ");
+      console.log(stringTemp);
       setStringBreascrumb(stringTemp);
     }
   }, [categories, stringBreascrumb]);
