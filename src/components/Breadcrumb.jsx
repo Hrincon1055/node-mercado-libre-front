@@ -12,10 +12,9 @@ export default function Breadcrumb() {
   useEffect(() => {
     if (categories.length > 0) {
       let stringTemp = categories
-        .slice(0, 1)
+        .slice(0, 3)
         .map((item) => item.name)
         .join(" > ");
-      console.log(stringTemp);
       setStringBreascrumb(stringTemp);
     }
   }, [categories, stringBreascrumb]);
